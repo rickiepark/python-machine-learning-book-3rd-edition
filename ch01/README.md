@@ -1,76 +1,87 @@
-Sebastian Raschka, 2019
-
-Python Machine Learning - Code Examples
-
-
-##  Chapter 1: Giving Computers the Ability to Learn from Data
+##  1장: 컴퓨터는 데이터에서 배운다
 
 
 ---
 
-**Chapter 1 does not contain any code examples.**
+**1장에는 코드 예제가 없습니다.**
 
 ---
 
-## Installing Python packages
+## 파이썬 패키지 설치
 
-Python is available for all three major operating systems — Microsoft Windows, macOS, and Linux — and the installer, as well as the documentation, can be downloaded from the official Python website: https://www.python.org.
+파이썬은 세 개의 주요 운영 체제인 마이크로소프트 윈도(Microsoft Windows), macOS, 리눅스
+(Linux)에서 사용할 수 있습니다. 파이썬 공식 웹 사이트(https://www.python.org)에서 문서와
+설치 파일을 내려받을 수 있습니다
 
-This book is written for Python version `>= 3.7.0`, and it is recommended
-you use the most recent version of Python 3 that is currently available,
-although most of the code examples may also be compatible with older versions of Python 3 and Python `>= 2.7.10`. If you decide to use Python 2.7 to execute the code examples, please make sure that you know about the major differences between the two Python versions. A good summary about the differences between Python 3 and 2.7 can be found at https://wiki.python.org/moin/Python2orPython3.
+책은 파이썬 3.7.2 버전과 그 이상에 맞추어져 있습니다. 현재 파이썬 3의 최신 버전을 사용하
+는 것이 좋습니다.
+일부 코드는 파이썬 2.7과 호환될 수 있지만 파이썬 2.7의 공식 지원이 2019년 말에 끝났기 때문에 상당수의 오픈 소스 라이브러리는 이미 파이썬 2.7에 대한 지원을 중단했습니다(https://python3statement.org/). 따라서 파이썬 3.7 또는 그 이상을 사용하는 것이 매우 권장됩니다.
 
-**Note**
+**노트**
 
-You can check your current default version of Python by executing
+다음 명령으로 현재 파이썬 버전을 확인할 수 있습니다.
 
     $ python -V
 
-In my case, it returns
+예를 들면 다음과 같이 출력됩니다.
 
     Python 3.7.1 :: Continuum Analytics, Inc.
 
 
-#### Pip
+#### pip
 
-The additional packages that we will be using throughout this book can be installed via the `pip` installer program, which has been part of the Python standard library since Python 3.3. More information about pip can be found at https://docs.python.org/3/installing/index.html.
+책에서 사용할 패키지는 pip 설치 프로그램으로 설치할 수 있습니다. 이 프로그램은 파이썬 3.3
+버전부터 파이썬 표준 라이브러리에 포함되었습니다. 자세한 pip 설명은 온라인 문서(https://
+docs.python.org/3/installing/index.html)를 참고하세요.
 
-After we have successfully installed Python, we can execute pip from the command line terminal to install additional Python packages:
+파이썬을 설치하고 난 후 터미널(Terminal)에서 pip 명령으로 필요한 파이썬 패키지를 설치할 수
+있습니다:
 
     pip install SomePackage
 
 
-(where `SomePackage` is a placeholder for numpy, pandas, matplotlib, scikit-learn, and so forth).
+(`SomePackage`는 numpy, pandas, matplotlib, scikit-learn 등이 될 수 있습니다)
 
-Already installed packages can be updated via the `--upgrade` flag:
+설치한 패키지를 업데이트할 때는 `--upgrade` 옵션을 사용합니다:
 
     pip install SomePackage --upgrade
 
 
-#### Anaconda
+#### 아나콘다
 
-A highly recommended alternative Python distribution for scientific computing
-is Anaconda by Continuum Analytics. Anaconda is a free—including commercial use—enterprise-ready Python distribution that bundles all the essential Python packages for data science, math, and engineering in one user-friendly cross-platform distribution. The Anaconda installer can be downloaded at https://docs.anaconda.com/anaconda/install/, and an Anaconda quick start-guide is available at https://docs.anaconda.com/anaconda/user-guide/getting-started/.
+과학 컴퓨팅을 위해서는 컨티넘 애널리틱스(Continuum Analytics)의 아나콘다(Anaconda) 파이썬 배포판을 권장합니다. 아나콘다는 상업적 목
+적을 포함하여 무료로 사용할 수 있고 기업이 사용하기 충분한 수준의 파이썬 배포판입니다. 데이
+터 과학, 수학, 공학용 파이썬 필수 패키지들을 모두 포함하고 있으며 주요 운영 체제를 모두 지원
+합니다. 아나콘다 설치 파일은 https://www.anaconda.com/download/에서 내려받을 수 있
+습니다. 간단한 아나콘다 안내는 온라인 문서(https://docs.anaconda.com/anaconda/userguide/
+getting-started/)를 참고하세요.
 
-After successfully installing Anaconda, we can install new Python packages using the following command:
+아나콘다를 설치한 후 다음 명령으로 필요한 파이썬 패키지를 설치할 수 있습니다:
 
     conda install SomePackage
 
-Existing packages can be updated using the following command:
+설치한 패키지를 업데이트할 때는 다음 명령을 사용합니다:
 
     conda update SomePackage
 
-Throughout this book, we will mainly use NumPy's multi-dimensional arrays to store and manipulate data. Occasionally, we will make use of pandas, which is a library built on top of NumPy that provides additional higher level data manipulation tools that make working with tabular data even more convenient. To augment our learning experience and visualize quantitative data, which is often extremely useful to intuitively make sense of it, we will use the very customizable matplotlib library.
+책 전반에 걸쳐 데이터를 저장하고 조작하는 데 넘파이 다차원 배열을 주로 사용합니다. 이따금
+판다스(Pandas)도 사용합니다. 판다스는 넘파이 위에 구축된 라이브러리고 테이블 형태의 데이터
+를 아주 쉽게 다룰 수 있는 고수준 도구를 제공합니다. 종종 정량적인 데이터를 시각화하면 
+이해하는 데 매우 도움이 됩니다. 이를 위해 많은 옵션을 제공하는 맷플롯립(Matplotlib) 라이
+브러리를 사용하겠습니다.
 
-#### Core packages
+#### 핵심 패키지
 
-The version numbers of the major Python packages that were used for writing this book are listed below. Please make sure that the version numbers of your installed packages are equal to, or greater than, those version numbers to ensure the code examples run correctly:
+책에서 사용하는 주요 파이썬 패키지 버전은 다음과 같습니다. 여러분 컴퓨터에 설치된 패키지와
+버전이 동일하거나 더 높은지 확인하세요. 예제 코드를 정상적으로 실행하려면 버전을 맞추는 것
+이 좋습니다:
 
-- [NumPy](http://www.numpy.org) >= 1.17.4
-- [SciPy](http://www.scipy.org) >= 1.3.1
-- [scikit-learn](http://scikit-learn.org/stable/) >= 0.22.0
-- [matplotlib](http://matplotlib.org) >= 3.1.0
-- [pandas](http://pandas.pydata.org) >= 0.25.3
+- [NumPy](http://www.numpy.org) >= 1.18.5
+- [SciPy](http://www.scipy.org) >= 1.4.1
+- [scikit-learn](http://scikit-learn.org/stable/) >= 0.23.2
+- [matplotlib](http://matplotlib.org) >= 3.1.1
+- [pandas](http://pandas.pydata.org) >= 1.0.4
+- [TensorFlow](https://www.tensorflow.org) >= 2.3.0
 
 ## Python/Jupyter Notebook
 
