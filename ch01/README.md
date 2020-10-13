@@ -66,7 +66,7 @@ getting-started/)를 참고하세요.
 
 책 전반에 걸쳐 데이터를 저장하고 조작하는 데 넘파이 다차원 배열을 주로 사용합니다. 이따금
 판다스(Pandas)도 사용합니다. 판다스는 넘파이 위에 구축된 라이브러리고 테이블 형태의 데이터
-를 아주 쉽게 다룰 수 있는 고수준 도구를 제공합니다. 종종 정량적인 데이터를 시각화하면 
+를 아주 쉽게 다룰 수 있는 고수준 도구를 제공합니다. 종종 정량적인 데이터를 시각화하면
 이해하는 데 매우 도움이 됩니다. 이를 위해 많은 옵션을 제공하는 맷플롯립(Matplotlib) 라이
 브러리를 사용하겠습니다.
 
@@ -83,47 +83,47 @@ getting-started/)를 참고하세요.
 - [pandas](http://pandas.pydata.org) >= 1.0.4
 - [TensorFlow](https://www.tensorflow.org) >= 2.3.0
 
-## Python/Jupyter Notebook
+## 파이썬/주피터 노트북
 
-Some readers were wondering about the `.ipynb` of the code files -- these files are IPython notebooks. I chose IPython notebooks over plain Python `.py` scripts, because I think that they are just great for data analysis projects! IPython notebooks allow us to have everything in one place: Our code, the results from executing the code, plots of our data, and documentation that supports the handy Markdown and powerful LaTeX syntax!
+어떤 독자들은 `.ipynb` 코드 파일에 무엇인지 모를 수 있습니다. 이 파일은 IPython 노트북입니다. 이 책의 코드는 평범한 파이썬 `.py` 스크립트 대신에 IPython 노트북에 담겨 있습니다. IPython 노트북이 데이터 분석 프로젝트에 안성맞춤이기 때문입니다! IPython 노트북을 사용하면 한 곳에서 모든 것을 처리할 수 있습니다. 코드, 코드를 실행한 결과, 그래프, 막다운(markdown)과 LaTeX 문법을을 지원하는 문서까지 가능합니다!
 
 ![](./images/ipynb_ex1.png)
 
-**Side Note:**  "IPython Notebook" recently became the "[Jupyter Notebook](<http://jupyter.org>)"; Jupyter is an umbrella project that aims to support other languages in addition to Python including Julia, R, and many more. Don't worry, though, for a Python user, there's only a difference in terminology (we say "Jupyter Notebook" now instead of "IPython Notebook").
+**노트:**  "IPython 노트북"은 최근에 "[주피터(Jupyter) 노트북](http://jupyter.org)"으로 바뀌었습니다. 주피터는 파이썬 외에도 줄리아(Julia), R 등의 다른 언어를 지원하는 프로젝트입니다. 파이썬 사용자에게는 달라지는 것이 없습니다. 이름만 바뀌었을 뿐입니다("IPython 노트북" 대신 "주피터 노트북"이라고 부릅니다).
 
-The Jupyter notebook can be installed as usually via pip.
+주피터 노트북은 pip를 사용해 설치할 수 있습니다.
 
     $ pip install jupyter notebook
 
-Alternatively, we can use the Conda installer if we have Anaconda or Miniconda installed:
+또는 아나콘다나 미니콘다를 설치했다면 콘다를 사용할 수 있습니다:
 
     $ conda install jupyter notebook
 
-To open a Jupyter notebook, we `cd` to the directory that contains your code examples, e.g,.
+주피터 노트북을 열려면 먼저 코드가 있는 디렉토리로 이동합니다. 예를 들어:
 
 
     $ cd ~/code/python-machine-learning-book
 
-and launch `jupyter notebook` by executing
+그다음 `jupyter notebook`을 실행합니다.
 
     $ jupyter notebook
 
-Jupyter will start in our default browser (typically running at [http://localhost:8888/](http://localhost:8888/)). Now, we can simply select the notebook you wish to open from the Jupyter menu.
+주피터가 기본 브라우저를 실행합니다(일반적으로 [http://localhost:8888/](http://localhost:8888/)에서 실행됩니다). 이제 주피터 메뉴에서 원하는 노트북을 선택해 열 수 있습니다.
 
 ![](./images/ipynb_ex2.png)
 
-For more information about the Jupyter notebook, I recommend the [Jupyter Beginner Guide](http://jupyter-notebook-beginner-guide.readthedocs.org/en/latest/what_is_jupyter.html) and [Jupyter Notebook Basics](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html).
+주피터 노트북에 대한 더 자세한 내용은 [주피터 초보자 가이드](http://jupyter-notebook-beginner-guide.readthedocs.org/en/latest/what_is_jupyter.html)와 [주피터 노트북 기본사항](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html)을 참고하세요.
 
-## Jupyter Lab
+## 주피터 랩
 
-An alternative to Jupyter Notebook, called Jupyter Lab, was released in 2018. It operates with the same `.ipynb` file types but offers some extra features in the browser interface. Whether you use Jupyter Notebook or Jupyter Lab is a matter of preference, but
+또 다른 주피터 노트북 환경인 주피터 랩(Jupyter Lab)이 2018년에 릴리스되었습니다. 동일한 `.ipynb` 파일을 다룰 수 있지만 브라우저 인터페이스에서 추가적인 기능을 제공합니다. 주피터 노트북과 주피터 랩 중 어느 것을 사용해도 괜찮습니다.
 
-Jupyter Lab can be installed via 
+주피터 랩은 다음과 같이 설치할 수 있습니다.
 
     $ conda install -c conda-forge jupyterlab
-    
-and similar to starting Jupyter Notebooks, you can run the command 
+
+주피터 노트북과 비슷하게 실행하려면 다음 명령을 실행합니다.
 
     $ jupyter lab
-    
-in your command line terminal to launch a Jupyter Lab session in your browser. For more information about the Jupyter Lab project, please visit the official documentation at https://jupyterlab.readthedocs.io/en/stable/,
+
+이 명령을 커맨드 라인 터미널에서 실행하면 브라우저에서 주피터 랩 세션을 시작합니다. 주피터 랩에 대한 더 자세한 정보는 [공식 문서](https://jupyterlab.readthedocs.io/en/stable/)를 참고하세요.
