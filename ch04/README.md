@@ -42,6 +42,8 @@
 
 **설치와 설정에 관한 더 자세한 내용은 1장의 [README.md 파일](../ch01/README.md)에 있습니다.**
 
-**(주피터 노트북을 설치하지 않았더라도 깃허브에서 [`ch02.ipynb`](https://github.com/rickiepark/python-machine-learning-book-3rd-edition/blob/master/ch02/ch02.ipynb)을 클릭해 노트북 파일을 볼 수 있습니다.)**.
+**(주피터 노트북을 설치하지 않았더라도 깃허브에서 [`ch04.ipynb`](https://github.com/rickiepark/python-machine-learning-book-3rd-edition/blob/master/ch04/ch04.ipynb)을 클릭해 노트북 파일을 볼 수 있습니다.)**.
 
 코드 예제 외에도 주피터 노트북에는 책의 내용에 맞는 섹션 제목을 함께 실었습니다. 또한 주피터 노트북에 원본 이미지와 그림을 포함시켰기 때문에 책을 읽으면서 코드를 쉽게 따라할 수 있으면 좋겠습니다.
+
+![](../ch02/images/jupyter-example-2.png)
