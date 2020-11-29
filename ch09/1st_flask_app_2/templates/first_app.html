@@ -1,21 +1,21 @@
 <!doctype html>
 <html>
   <head>
-    <title>First app</title>
+    <title>첫 번째 애플리케이션</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
 
 {% from "_formhelpers.html" import render_field %}
 
-<div>What's your name?</div>
+<div>이름을 입력해 주세요.</div>
 <form method=post action="/hello">
 
   <dl>
 	  {{ render_field(form.sayhello) }}
   </dl>
 
-  <input type=submit value='Say Hello' name='submit_btn'>
+  <input type=submit value='이름 입력' name='submit_btn'>
 
 </form>
 
