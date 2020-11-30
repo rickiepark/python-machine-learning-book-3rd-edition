@@ -1,57 +1,49 @@
-Python Machine Learning - Code Examples
+머신 러닝 교과서 2판
 
 
-##  Chapter 10: Predicting Continuous Target Variables with Regression Analysis
+## 10장 - 회귀 분석으로 연속적 타깃 변수 예측
 
-### Chapter Outline
+### 목차
 
-- Introducing linear regression
-  - Simple linear regression
-  - Multiple linear regression
-- Exploring the Housing dataset
-  - Loading the Housing dataset into a data frame
-  - Visualizing the important characteristics of a dataset
-  - Looking at relationships using a correlation matrix
-- Implementing an ordinary least squares linear regression model
-  - Solving regression for regression parameters with gradient descent
-  - Estimating coef cient of a regression model via scikit-learn
-- Fitting a robust regression model using RANSAC
-- Evaluating the performance of linear regression models
-- Using regularized methods for regression 
-- Turning a linear regression model into a curve – polynomial
-regression
-  - Adding polynomial terms using scikit-learn
-  - Modeling nonlinear relationships in the Housing dataset
-- Dealing with nonlinear relationships using random forests
-  - Decision tree regression
-  - Random forest regression
-- Summary
+- 선형 회귀
+    - 단순 선형 회귀
+    - 다중 선형 회귀
+- 주택 데이터셋 탐색
+    - 데이터프레임으로 주택 데이터셋 읽기
+    - 데이터셋의 중요 특징 시각화
+- 최소 제곱 선형 회귀 모델 구현
+    - 경사 하강법으로 회귀 모델의 파라미터 구하기
+    - 사이킷런으로 회귀 모델의 가중치 추정
+- RANSAC을 사용하여 안정된 회귀 모델 훈련
+- 선형 회귀 모델의 성능 평가
+- 회귀에 규제 적용
+- 선형 회귀 모델을 다항 회귀로 변환
+    - 주택 데이터셋을 사용한 비선형 관계 모델링
+- 랜덤 포레스트를 사용하여 비선형 관계 다루기
+    - 결정 트리 회귀
+    - 랜덤 포레스트 회귀
+- 요약
 
-### A note on using the code examples
+### 코드 사용 방법 안내
 
-The recommended way to interact with the code examples in this book is via Jupyter Notebook (the `.ipynb` files). Using Jupyter Notebook, you will be able to execute the code step by step and have all the resulting outputs (including plots and images) all in one convenient document.
+이 책의 코드를 사용하는 가장 좋은 방법은 주피터 노트북(`.ipynb` 파일)입니다. 주피터 노트북을 사용하면 단계적으로 코드를 실행하고 하나의 문서에 편리하게 (그림과 이미지를 포함해) 모든 출력을 저장할 수 있습니다.
 
 ![](../ch02/images/jupyter-example-1.png)
 
-
-
-Setting up Jupyter Notebook is really easy: if you are using the Anaconda Python distribution, all you need to install jupyter notebook is to execute the following command in your terminal:
+주피터 노트북은 매우 간단하게 설치할 수 있습니다. 아나콘다 파이썬 배포판을 사용한다면 터미널에서 다음 명령을 실행하여 주피터 노트북을 설치할 수 있습니다:
 
     conda install jupyter notebook
 
-Then you can launch jupyter notebook by executing
+다음 명령으로 주피터 노트북을 실행합니다.
 
     jupyter notebook
 
-A window will open up in your browser, which you can then use to navigate to the target directory that contains the `.ipynb` file you wish to open.
+브라우저에서 윈도우가 열리면 원하는 `.ipynb`가 들어 있는 디렉토리로 이동할 수 있습니다.
 
-**More installation and setup instructions can be found in the [README.md file of Chapter 1](../ch01/README.md)**.
+**설치와 설정에 관한 더 자세한 내용은 1장의 [README.md 파일](../ch01/README.md)에 있습니다.**
 
-**(Even if you decide not to install Jupyter Notebook, note that you can also view the notebook files on GitHub by simply clicking on them: [`ch10.ipynb`](ch10.ipynb))**
+**(주피터 노트북을 설치하지 않았더라도 깃허브에서 [`ch10.ipynb`](https://github.com/rickiepark/python-machine-learning-book-3rd-edition/blob/master/ch10/ch10.ipynb)을 클릭해 노트북 파일을 볼 수 있습니다.)**.
 
-In addition to the code examples, I added a table of contents to each Jupyter notebook as well as section headers that are consistent with the content of the book. Also, I included the original images and figures in hope that these make it easier to navigate and work with the code interactively as you are reading the book.
+코드 예제 외에도 주피터 노트북에는 책의 내용에 맞는 섹션 제목을 함께 실었습니다. 또한 주피터 노트북에 원본 이미지와 그림을 포함시켰기 때문에 책을 읽으면서 코드를 쉽게 따라할 수 있으면 좋겠습니다.
 
-![](../ch02/images/jupyter-example-2.png)
-
-
-When I was creating these notebooks, I was hoping to make your reading (and coding) experience as convenient as possible! However, if you don't wish to use Jupyter Notebooks, I also converted these notebooks to regular Python script files (`.py` files) that can be viewed and edited in any plaintext editor. 
+![](../ch02/images/jupyter-example-2.png) 
