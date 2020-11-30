@@ -1,41 +1,37 @@
-Sebastian Raschka, 2017
+머신 러닝 교과서 2판
 
-Python Machine Learning - Code Examples
+## 9장 - 웹 애플리케이션에 머신 러닝 모델 내장하기
 
-## Chapter 9 - Embedding a Machine Learning Model into a Web Application
-
-- Serializing fitted scikit-learn estimators
-- Setting up a SQLite database for data storage
-- Developing a web application with Flask
-- Our first Flask web application
-  - Form validation and rendering
-  - Turning the movie classifier into a web application
-- Deploying the web application to a public server
-  - Updating the movie review classifier
-- Summary
+- 8장 정리 - 영화 리뷰 분류를 위한 모델 훈련하기
+- 학습된 사이킷런 추정기 저장
+- 데이터를 저장하기 위해 SQLite 데이터베이스 설정
+- 플라스크 웹 애플리케이션 개발
+    - 첫 번째 플라스크 애플리케이션
+    - 폼 검증과 화면 출력
+- 영화 리뷰 분류기를 웹 애플리케이션으로 만들기
+- 공개 서버에 웹 애플리케이션 배포
+    - 영화 분류기 업데이트
+- 요약
 
 ---
 
-The code for the Flask web applications can be found in the following directories:
+플래스크(Flask) 웹 애플리케이션 코드는 다음 디렉토리에 있습니다:
+    
+- `1st_flask_app_1/`: 간단한 플래스크 웹 애플리케이션
+- `1st_flask_app_2/`: `1st_flask_app_1`에 폼 검증과 렌더링을 추가하여 확장한 버전
+- `movieclassifier/`: 웹 애플리케이션에 내장한 영화 리뷰 분류기
+- `movieclassifier_with_update/`: `movieclassifier`와 같지만 초기화를 위해 sqlite 데이터베이스를 사용합니다.
 
-- `1st_flask_app_1/`: A simple Flask web app
-- `1st_flask_app_2/`: `1st_flask_app_1` extended with flexible form validation and rendering
-- `movieclassifier/`: The movie classifier embedded in a web application
-- `movieclassifier_with_update/`: same as `movieclassifier` but with update from sqlite database upon start
-
-
-To run the web applications locally, `cd` into the respective directory (as listed above) and execute the main-application script, for example,
+웹 애플리케이션을 로컬에서 실행하려면 `cd`로 (위에 나열된) 각 디렉토리에 들어가서 메인 애플리케이션 스크립트를 실행합니다.
 
     cd ./1st_flask_app_1
-    python3 app.py
-
-Now, you should see something like
-
+    python app.py
+    
+터미널에서 다음같은 내용일 출력됩니다.
+    
      * Running on http://127.0.0.1:5000/
      * Restarting with reloader
+     
+웹 브라우저를 열고 터미널에 출력된 주소(일반적으로 http://127.0.0.1:5000/)를 입력하여 웹 애플리케이션에 접속합니다.
 
-in your terminal.
-Next, open a web browser and enter the address displayed in your terminal (typically http://127.0.0.1:5000/) to view the web application.
-
-
-**Link to a live example application built with this tutorial: http://raschkas.pythonanywhere.com/**.
+**이 튜토리얼로 만든 예제 애플리케이션 데모는 다음 주소에서 볼 수 있습니다: http://haesun.pythonanywhere.com/**.

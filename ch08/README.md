@@ -1,48 +1,45 @@
-Python Machine Learning - Code Examples
+머신 러닝 교과서 2판
 
 
-##  Chapter 8: Applying Machine Learning to Sentiment Analysis
+##  8장 - 감성 분석에 머신 러닝 적용
 
-### Chapter Outline
+### 목차
 
-- Artificial neurons – a brief glimpse into the early history of machine learning
-  - The formal definition of an artificial neuron
-  - The perceptron learning rule
-- Implementing a perceptron learning algorithm in Python 
-  - An object-oriented perceptron API
-  - Training a perceptron model on the Iris dataset
-- Adaptive linear neurons and the convergence of learning
-  - Minimizing cost functions with gradient descent
-  - Implementing an Adaptive Linear Neuron in Python
-  - Improving gradient descent through feature scaling
-  - Large scale machine learning and stochastic gradient descent
-- Summary
+- 텍스트 처리용 IMDb 영화 리뷰 데이터 준비 
+    - 영화 리뷰 데이터셋 구하기 
+    -영화 리뷰 데이터셋을 더 간편한 형태로 전처리 
+- BoW 모델 소개 
+    - 단어를 특성 벡터로 변환 
+    - tf-idf를 사용하여 단어 적합성 평가 
+    - 텍스트 데이터 정제 
+    - 문서를 토큰으로 나누기 
+- 문서 분류를 위한 로지스틱 회귀 모델 훈련 
+- 대용량 데이터 처리: 온라인 알고리즘과 외부 메모리 학습 
+- 잠재 디리클레 할당을 사용한 토픽 모델링 
+    - LDA를 사용한 텍스트 문서 분해 
+    - 사이킷런의 LDA
+- 요약
 
-### A note on using the code examples
+### 코드 사용 방법 안내
 
-The recommended way to interact with the code examples in this book is via Jupyter Notebook (the `.ipynb` files). Using Jupyter Notebook, you will be able to execute the code step by step and have all the resulting outputs (including plots and images) all in one convenient document.
+이 책의 코드를 사용하는 가장 좋은 방법은 주피터 노트북(`.ipynb` 파일)입니다. 주피터 노트북을 사용하면 단계적으로 코드를 실행하고 하나의 문서에 편리하게 (그림과 이미지를 포함해) 모든 출력을 저장할 수 있습니다.
 
 ![](../ch02/images/jupyter-example-1.png)
 
-
-
-Setting up Jupyter Notebook is really easy: if you are using the Anaconda Python distribution, all you need to install jupyter notebook is to execute the following command in your terminal:
+주피터 노트북은 매우 간단하게 설치할 수 있습니다. 아나콘다 파이썬 배포판을 사용한다면 터미널에서 다음 명령을 실행하여 주피터 노트북을 설치할 수 있습니다:
 
     conda install jupyter notebook
 
-Then you can launch jupyter notebook by executing
+다음 명령으로 주피터 노트북을 실행합니다.
 
     jupyter notebook
 
-A window will open up in your browser, which you can then use to navigate to the target directory that contains the `.ipynb` file you wish to open.
+브라우저에서 윈도우가 열리면 원하는 `.ipynb`가 들어 있는 디렉토리로 이동할 수 있습니다.
 
-**More installation and setup instructions can be found in the [README.md file of Chapter 1](../ch01/README.md)**.
+**설치와 설정에 관한 더 자세한 내용은 1장의 [README.md 파일](../ch01/README.md)에 있습니다.**
 
-**(Even if you decide not to install Jupyter Notebook, note that you can also view the notebook files on GitHub by simply clicking on them: [`ch08.ipynb`](ch08.ipynb))**
+**(주피터 노트북을 설치하지 않았더라도 깃허브에서 [`ch08.ipynb`](https://github.com/rickiepark/python-machine-learning-book-3rd-edition/blob/master/ch08/ch08.ipynb)을 클릭해 노트북 파일을 볼 수 있습니다.)**.
 
-In addition to the code examples, I added a table of contents to each Jupyter notebook as well as section headers that are consistent with the content of the book. Also, I included the original images and figures in hope that these make it easier to navigate and work with the code interactively as you are reading the book.
+코드 예제 외에도 주피터 노트북에는 책의 내용에 맞는 섹션 제목을 함께 실었습니다. 또한 주피터 노트북에 원본 이미지와 그림을 포함시켰기 때문에 책을 읽으면서 코드를 쉽게 따라할 수 있으면 좋겠습니다.
 
-![](../ch02/images/jupyter-example-2.png)
-
-
-When I was creating these notebooks, I was hoping to make your reading (and coding) experience as convenient as possible! However, if you don't wish to use Jupyter Notebooks, I also converted these notebooks to regular Python script files (`.py` files) that can be viewed and edited in any plaintext editor. 
+![](../ch02/images/jupyter-example-2.png) 
