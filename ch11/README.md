@@ -1,49 +1,44 @@
-Python Machine Learning - Code Examples
+머신 러닝 교과서 2판
 
 
-##  Chapter 11: Working with Unlabeled Data – Clustering Analysis
+##  11장 - 레이블되지 않은 데이터 다루기: 군집 분석
 
-### Chapter Outline
+### 목차
 
-- Grouping objects by similarity using k-means
-  - K-means clustering using scikit-learn
-  - A smarter way of placing the initial cluster centroids using k-means++
-  - Hard versus soft clustering
-  - Using the elbow method to find the optimal number of clusters
-  - Quantifying the quality of clustering via silhouette plots
-- Organizing clusters as a hierarchical tree
-  - Grouping clusters in bottom-up fashion
-  - Performing hierarchical clustering on a distance matrix
-  - Attaching dendrograms to a heat map
-  - Applying agglomerative clustering via scikit-learn
-- Locating regions of high density via DBSCAN
-- Summary
+- k-평균 알고리즘을 사용하여 유사한 객체 그룹핑
+    - 사이킷런을 사용한 k-평균 군집
+    - k-평균 ++로 초기 클러스터 센트로이드를 똑똑하게 할당
+    - 직접 군집 vs 간접 군집
+    - 엘보우 방법을 사용하여 최적의 클러스터 개수 찾기
+    - 실루엣 그래프로 군집 품질을 정량화
+- 계층적인 트리로 클러스터 조직화
+    - 상향식으로 클러스터 묶기
+    - 거리 행렬에서 계층 군집 수행
+    - 히트맵에 덴드로그램 연결
+    - 사이킷런에서 병합 군집 적용
+- DBSCAN을 사용하여 밀집도가 높은 지역 찾기
+- 요약
 
-### A note on using the code examples
+### 코드 사용 방법 안내
 
-The recommended way to interact with the code examples in this book is via Jupyter Notebook (the `.ipynb` files). Using Jupyter Notebook, you will be able to execute the code step by step and have all the resulting outputs (including plots and images) all in one convenient document.
+이 책의 코드를 사용하는 가장 좋은 방법은 주피터 노트북(`.ipynb` 파일)입니다. 주피터 노트북을 사용하면 단계적으로 코드를 실행하고 하나의 문서에 편리하게 (그림과 이미지를 포함해) 모든 출력을 저장할 수 있습니다.
 
 ![](../ch02/images/jupyter-example-1.png)
 
-
-
-Setting up Jupyter Notebook is really easy: if you are using the Anaconda Python distribution, all you need to install jupyter notebook is to execute the following command in your terminal:
+주피터 노트북은 매우 간단하게 설치할 수 있습니다. 아나콘다 파이썬 배포판을 사용한다면 터미널에서 다음 명령을 실행하여 주피터 노트북을 설치할 수 있습니다:
 
     conda install jupyter notebook
 
-Then you can launch jupyter notebook by executing
+다음 명령으로 주피터 노트북을 실행합니다.
 
     jupyter notebook
 
-A window will open up in your browser, which you can then use to navigate to the target directory that contains the `.ipynb` file you wish to open.
+브라우저에서 윈도우가 열리면 원하는 `.ipynb`가 들어 있는 디렉토리로 이동할 수 있습니다.
 
-**More installation and setup instructions can be found in the [README.md file of Chapter 1](../ch01/README.md)**.
+**설치와 설정에 관한 더 자세한 내용은 1장의 [README.md 파일](../ch01/README.md)에 있습니다.**
 
-**(Even if you decide not to install Jupyter Notebook, note that you can also view the notebook files on GitHub by simply clicking on them: [`ch11.ipynb`](ch11.ipynb))**
+**(주피터 노트북을 설치하지 않았더라도 깃허브에서 [`ch11.ipynb`](https://github.com/rickiepark/python-machine-learning-book-3rd-edition/blob/master/ch11/ch11.ipynb)을 클릭해 노트북 파일을 볼 수 있습니다.)**.
 
-In addition to the code examples, I added a table of contents to each Jupyter notebook as well as section headers that are consistent with the content of the book. Also, I included the original images and figures in hope that these make it easier to navigate and work with the code interactively as you are reading the book.
+코드 예제 외에도 주피터 노트북에는 책의 내용에 맞는 섹션 제목을 함께 실었습니다. 또한 주피터 노트북에 원본 이미지와 그림을 포함시켰기 때문에 책을 읽으면서 코드를 쉽게 따라할 수 있으면 좋겠습니다.
 
 ![](../ch02/images/jupyter-example-2.png)
-
-
-When I was creating these notebooks, I was hoping to make your reading (and coding) experience as convenient as possible! However, if you don't wish to use Jupyter Notebooks, I also converted these notebooks to regular Python script files (`.py` files) that can be viewed and edited in any plaintext editor. 
