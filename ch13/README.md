@@ -1,66 +1,61 @@
-Python Machine Learning - Code Examples
+머신 러닝 교과서 2판
 
 
-##  Chapter 13: Parallelizing Neural Network Training with TensorFlow 
+##  13장 - 텐서플로를 사용한 신경망 훈련 
 
 
-### Chapter Outline
+### 목차
 
-- TensorFlow and training performance
-  - Performance challenges
-  - What is TensorFlow?
-  - How we will learn TensorFlow
-- First steps with TensorFlow
-  - Installing TensorFlow
-  - Creating tensors in TensorFlow
-  - Manipulating the data type and shape of a tensor
-  - Applying mathematical operations to tensors
-  - Split, stack, and concatenate tensors
-  - Building input pipelines using tf.data – the TensorFlow Dataset API
-    - Creating a TensorFlow Dataset from existing tensors
-    - Combining two tensors into a joint dataset
-    - Shuffle, batch, and repeat
-    - Creating a dataset from files on your local storage disk
-    - Fetching available datasets from the `tensorflow_datasets` library
-- Building an NN model in TensorFlow
-  - The TensorFlow Keras API (tf.keras)
-  - Building a linear regression model
-  - Model training via the `.compile()` and `.fit()` methods 
-  - Building a multilayer perceptron for classifying flowers in the Iris dataset
-  - Evaluating the trained model on the test dataset
-  - Saving and reloading the trained model
-- Choosing activation functions for multilayer NNs
-  - Logistic function recap
-  - Estimating class probabilities in multiclass classification via the softmax function
-  - Broadening the output spectrum using a hyperbolic tangent
-  - Rectified linear unit activation
-- Summary
+- 텐서플로와 훈련 성능
+  - 성능 문제
+  - 텐서플로란?
+  - 텐서플로 학습 순서
+- 텐서플로 처음 시작하기
+  - 텐서플로 설치
+  - 텐서플로에서 텐서 만들기
+  - 텐서의 데이터 타입과 크기 조작하기
+  - 텐서에 수학 연산 적용하기
+  - split(), stack(), concatenate() 함수
+- 텐서플로 데이터셋 API(tf.data)를 사용하여 입력 파이프라인 구축하기
+  - 텐서에서 텐서플로 데이터셋 만들기
+  - 두 개의 텐서를 하나의 데이터셋으로 연결하기
+  - shuffle(), batch(), repeat() 메서드
+  - 로컬 디스크에 있는 파일에서 데이터셋 만들기
+  - `tensorflow_datasets` 라이브러리에서 데이터셋 로드하기
+- 텐서플로로 신경망 모델 만들기
+  - 텐서플로 케라스 API (tf.keras)
+  - 선형 회귀 모델 만들기
+  - `.compile()`과 `.fit()` 메서드를 사용한 모델 훈련
+  - 붓꽃 데이터셋을 분류하는 다층 퍼셉트론 만들기
+  - 테스트 데이터셋에서 훈련된 모델 평가하기
+  - 훈련된 모델 저장하고 복원하기
+- 다층 신경망의 활성화 함수 선택
+  - 로지스틱 함수 요약
+  - 소프트맥스 함수를 사용한 다중 클래스 확률 예측
+  - 하이퍼볼릭 탄젠트로 출력 범위 넓히기
+  - 렐루 활성화 함수
+- 요약
 
-### A note on using the code examples
+### 코드 사용 방법 안내
 
-The recommended way to interact with the code examples in this book is via Jupyter Notebook (the `.ipynb` files). Using Jupyter Notebook, you will be able to execute the code step by step and have all the resulting outputs (including plots and images) all in one convenient document.
+이 책의 코드를 사용하는 가장 좋은 방법은 주피터 노트북(`.ipynb` 파일)입니다. 주피터 노트북을 사용하면 단계적으로 코드를 실행하고 하나의 문서에 편리하게 (그림과 이미지를 포함해) 모든 출력을 저장할 수 있습니다.
 
 ![](../ch02/images/jupyter-example-1.png)
 
-
-
-Setting up Jupyter Notebook is really easy: if you are using the Anaconda Python distribution, all you need to install jupyter notebook is to execute the following command in your terminal:
+주피터 노트북은 매우 간단하게 설치할 수 있습니다. 아나콘다 파이썬 배포판을 사용한다면 터미널에서 다음 명령을 실행하여 주피터 노트북을 설치할 수 있습니다:
 
     conda install jupyter notebook
 
-Then you can launch jupyter notebook by executing
+다음 명령으로 주피터 노트북을 실행합니다.
 
     jupyter notebook
 
-A window will open up in your browser, which you can then use to navigate to the target directory that contains the `.ipynb` file you wish to open.
+브라우저에서 윈도우가 열리면 원하는 `.ipynb`가 들어 있는 디렉토리로 이동할 수 있습니다.
 
-**More installation and setup instructions can be found in the [README.md file of Chapter 1](../ch01/README.md)**.
+**설치와 설정에 관한 더 자세한 내용은 1장의 [README.md 파일](../ch01/README.md)에 있습니다.**
 
-**(Even if you decide not to install Jupyter Notebook, note that you can also view the notebook files on GitHub by simply clicking on them: [`ch13_part1.ipynb`](ch13_part1.ipynb) and [`ch13_part2.ipynb`](ch13_part2.ipynb))**
+**(주피터 노트북을 설치하지 않았더라도 깃허브에서 [`ch13_part1.ipynb`](https://github.com/rickiepark/python-machine-learning-book-3rd-edition/blob/master/ch13/ch13_part1.ipynb)과 [`ch13_part2.ipynb`](https://github.com/rickiepark/python-machine-learning-book-3rd-edition/blob/master/ch13/ch13_part2.ipynb)을 클릭해 노트북 파일을 볼 수 있습니다.)**.
 
-In addition to the code examples, I added a table of contents to each Jupyter notebook as well as section headers that are consistent with the content of the book. Also, I included the original images and figures in hope that these make it easier to navigate and work with the code interactively as you are reading the book.
+코드 예제 외에도 주피터 노트북에는 책의 내용에 맞는 섹션 제목을 함께 실었습니다. 또한 주피터 노트북에 원본 이미지와 그림을 포함시켰기 때문에 책을 읽으면서 코드를 쉽게 따라할 수 있으면 좋겠습니다.
 
 ![](../ch02/images/jupyter-example-2.png)
-
-
-When I was creating these notebooks, I was hoping to make your reading (and coding) experience as convenient as possible! However, if you don't wish to use Jupyter Notebooks, I also converted these notebooks to regular Python script files (`.py` files) that can be viewed and edited in any plaintext editor. 
