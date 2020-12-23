@@ -6,30 +6,30 @@
 
 ### 목차
 
-- The key features of TensorFlow
-  - TensorFlow's computation graphs: migrating to TensorFlow v2
-     - Understanding computation graphs
-     - Creating a graph in TensorFlow v1.x
-     - Migrating a graph to TensorFlow v2
-     - Loading input data into a model: TensorFlow v1.x style
-     - Loading input data into a model: TensorFlow v2 style
-  - Improving computational performance with function decorators
-  - TensorFlow Variable objects for storing and updating model parameters
-  - Computing gradients via automatic differentiation and GradientTape
-     - Computing the gradients of the loss with respect to trainable variables
-     - Computing gradients with respect to nontrainable tensors
-     - Keeping resources for multiple gradient computations
-- Simplifying implementations of common architectures via the Keras API
-  - Solving an XOR classification problem
-  - Making model building more flexible with Keras' functional API
-  - Implementing models based on Keras' Model class
-  - Writing custom Keras layers
-- TensorFlow Estimators
-  - Working with feature columns
-  - Machine learning with pre-made Estimators
-  - Using Estimators for MNIST handwritten digit classification
-  - Creating a custom Estimator from an existing Keras model
-- Summary
+- 텐서플로의 주요 특징
+- 텐서플로의 계산 그래프: 텐서플로 v2로 이전하기
+  - 계산 그래프 이해하기
+  - 텐서플로 v1.x에서 그래프 만들기
+  - 텐서플로 v2로 이전하기
+  - 입력 데이터를 모델에 주입하기: 텐서플로 v1.x 스타일
+  - 입력 데이터를 모델에 주입하기: 텐서플로 v2 스타일
+  - 함수 데코레이터로 계산 성능 높이기
+- 모델 파라미터를 저장하고 업데이트하기 위한 텐서플로 변수 객체
+- 자동 미분과 GradientTape을 사용해 그레이디언트 계산하기
+  - 훈련 가능한 변수에 대한 손실의 그레이디언트 계산하기
+  - 훈련하지 않는 변수에 대한 그레이디언트 계산하기
+  - 여러 개의 그레이디언트 계산하기
+- 케라스 API를 사용해 간단하게 일반적인 구조 구현하기
+  - XOR 분류 문제 풀어보기
+  - 케라스 함수형 API로 유연성이 높은 모델 만들기
+  - 케라스의 Model 클래스 기반으로 모델 만들기
+  - 사용자 정의 케라스 층 만들기
+- 텐서플로 추정기
+  - 특성 열 사용하기
+  - 사전에 준비된 추정기로 머신 러닝 수행하기
+  - 추정기를 사용해 MNIST 손글씨 숫자 분류하기
+  - 케라스 모델에서 추정기 만들기
+- 요약
 
 ### 코드 사용 방법 안내
 
