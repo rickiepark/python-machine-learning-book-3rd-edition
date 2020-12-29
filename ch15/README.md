@@ -24,11 +24,11 @@
     - 텐서플로 케라스 API를 사용해 CNN 구현하기
         - 케라스에서 CNN 층 설정하기
         - 케라스로 CNN 구성하기
-- Gender classification from face images using a CNN
-  - Loading the CelebA dataset
-  - Image transformation and data augmentation
-  - Training a CNN gender classifier
-- Summary
+- CNN을 사용해 얼굴 이미지의 성별 분류하기
+    - CelebA 데이터셋 로드하기
+    - 이미지 변환과 데이터 증식
+    - CNN 성별 분류기 훈련
+- 요약
 
 ### 코드 사용 방법 안내
 
