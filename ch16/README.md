@@ -22,16 +22,16 @@
         - 문장 인코딩을 위한 임베딩 층
         - RNN 모델 만들기
         - 감성 분석 작업을 위한 RNN 모델 만들기
-  - Project two: character-level language modeling in TensorFlow
-    - Preprocessing the dataset
-    - Building a character-level RNN model
-    - Evaluation phase: generating new text passages
-- Understanding language with the Transformer model
-  - Understanding the self-attention mechanism
-  - A basic version of self-attention
-  - Parameterizing the self-attention mechanism with query, key, and value weights
-  - Multi-head attention and the Transformer block
-- Summary
+    - 두 번째 프로젝트: 텐서플로로 글자 단위 언어 모델 구현
+        - 데이터셋 전처리
+        - 문자 수준의 RNN 모델 만들기
+        - 평가 단계 - 새로운 텍스트 생성
+- 트랜스포머 모델을 사용한 언어 이해
+    - 셀프 어텐션 메카니즘 이해하기
+        - 셀프 어텐션 기본 구조
+        - 쿼리, 키, 값 가중치를 가진 셀프 어텐션 메카니즘
+    - 멀티-헤드 어텐션과 트랜스포머 블록
+- 요약
 
 ### 코드 사용 방법 안내
 
