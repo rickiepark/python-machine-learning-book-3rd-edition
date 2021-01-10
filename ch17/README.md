@@ -16,17 +16,17 @@
     - 생성자와 판별자 신경망 구현하기
     - 훈련 데이터셋 정의하기
     - GAN 모델 훈련하기
-- Improving the quality of synthesized images using a convolutional and Wasserstein GAN
-  - Transposed convolution
-  - Batch normalization
-  - Implementing the generator and discriminator
-  - Dissimilarity measures between two distributions
-  - Using EM distance in practice for GANs
-  - Gradient penalty
-  - Implementing WGAN-GP to train the DCGAN model
-  - Mode collapse
-  - Other GAN applications
-- Summary
+- 합성곱 GAN과 와서스테인 GAN을 사용하여 합성 이미지의 품질 높이기
+    - 전치 합성곱
+    - 배치 정규화
+    - 생성자와 판별자 구현하기
+    - 두 분포 사이의 거리 측정하기
+    - GAN에 EM 거리 사용하기
+    - 그래디언트 페널티
+    - WGAN-GP로 DCGAN 모델 훈련하기
+    - 모드 붕괴
+- 다른 GAN 애플리케이션
+- 요약
 
 ### 코드 사용 방법 안내
 
