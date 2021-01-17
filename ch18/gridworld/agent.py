@@ -33,7 +33,7 @@ class Agent(object):
         self.epsilon_min = epsilon_min
         self.epsilon_decay = epsilon_decay
 
-        # Define the q_table
+        # q_table 정의
         self.q_table = defaultdict(lambda: np.zeros(self.env.nA))
 
     def choose_action(self, state):
@@ -55,10 +55,10 @@ class Agent(object):
         else:
             q_target = r + self.gamma*np.max(self.q_table[next_s])
 
-        # Update the q_table
+        # q_table 업데이트
         self.q_table[s][a] += self.lr * (q_target - q_val)
 
-        # Adjust the epislon
+        # epislon 조정
         self._adjust_epsilon()
 
     def _adjust_epsilon(self):

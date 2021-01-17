@@ -44,7 +44,7 @@ def run_qlearning(agent, env, num_episodes=50):
                 break
             final_reward = reward
         history.append((n_moves, final_reward))
-        print('Episode %d: Reward %.1f #Moves %d'
+        print('에피소드 %d: 보상 %.1f #이동 %d'
               % (episode, final_reward, n_moves))
 
     return history

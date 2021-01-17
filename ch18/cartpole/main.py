@@ -52,18 +52,18 @@ class DQNAgent:
     def _build_nn_model(self, n_layers=3):
         self.model = tf.keras.Sequential()
 
-        # Hidden layers
+        # 은닉층
         for n in range(n_layers - 1):
             self.model.add(tf.keras.layers.Dense(
                 units=32, activation='relu'))
             self.model.add(tf.keras.layers.Dense(
                 units=32, activation='relu'))
 
-        # Last layer
+        # 마지막 층
         self.model.add(tf.keras.layers.Dense(
             units=self.action_size))
 
-        # Build & compile model
+        # 모델 빌드 & 컴파일
         self.model.build(input_shape=(None, self.state_size))
         self.model.compile(
             loss='mse',
@@ -76,7 +76,7 @@ class DQNAgent:
         if np.random.rand() <= self.epsilon:
             return random.randrange(self.action_size)
         q_values = self.model.predict(state)[0]
-        return np.argmax(q_values)  # returns action
+        return np.argmax(q_values)  # 행동 반환
 
     def _learn(self, batch_samples):
         batch_states, batch_targets = [], []
@@ -122,7 +122,7 @@ def plot_learning_history(history):
     plt.show()
 
 
-# General settings
+# 일반 설정
 EPISODES = 200
 batch_size = 32
 init_replay_memory_size = 500
@@ -133,7 +133,7 @@ if __name__ == '__main__':
     state = env.reset()
     state = np.reshape(state, [1, agent.state_size])
 
-    # Filling up the replay-memory
+    # 재생 메모리 채우기
     for i in range(init_replay_memory_size):
         action = agent.choose_action(state)
         next_state, reward, done, _ = env.step(action)
@@ -164,7 +164,7 @@ if __name__ == '__main__':
                 env.render()
             if done:
                 total_rewards.append(i)
-                print('Episode: %d/%d, Total reward: %d'
+                print('에피소드: %d/%d, 총 보상: %d'
                       % (e, EPISODES, i))
                 break
             loss = agent.replay(batch_size)
