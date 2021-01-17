@@ -1,78 +1,73 @@
-Python Machine Learning - Code Examples
+머신 러닝 교과서 2판
 
 
-##  Chapter 18: Reinforcement Learning for Decision Making in Complex Environments
+##  18장 - 강화 학습으로 복잡한 환경에서 의사 결정하기
 
 
-### Chapter Outline
+### 목차
 
-- Introduction: learning from experience
-  - Understanding reinforcement learning
-  - Defining the agent-environment interface of a reinforcement learning system
-  - The theoretical foundations of RL
-    - Markov decision processes
-    - The mathematical formulation of Markov decision processes
-    - Visualization of a Markov process
-    - Episodic versus continuing tasks
-  - RL terminology: return, policy, and value function
-    - The return
-    - Policy
-    - Value function
-  - Dynamic programming using the Bellman equation
-- Reinforcement learning algorithms
-  - Dynamic programming
-    - Policy evaluation – predicting the value function with dynamic programmin
-    - Improving the policy using the estimated value function
-    - Policy iteration
-    - Value iteration
-  - Reinforcement learning with Monte Carlo
-    - State-value function estimation using MC
-    - Action-value function estimation using MC
-    - Finding an optimal policy using MC control
-    - Policy improvement – computing the greedy policy from the action-value function
-  - Temporal difference learning
-    - TD prediction
-    - On-policy TD control (SARSA)
-    - Off-policy TD control (Q-learning)
-- Implementing our first RL algorithm
-  - Introducing the OpenAI Gym toolkit
-    - Working with the existing environments in OpenAI Gym
-  - A grid world example
-    - Implementing the grid world environment in OpenAI Gym
-  - Solving the grid world problem with Q-learning
-    - Implementing the Q-learning algorithm
-- A glance at deep Q-learning
-  - Training a DQN model according to the Q-learning algorithm
-    - Replay memory
-    - Determining the target values for computing the loss
-  - Implementing a deep Q-learning algorithm
-- Chapter and book summary
+- 경험에서 배웁니다
+    - 강화 학습 이해하기
+    - 강화 학습 시스템의 에이전트-환경 인터페이스 정의하기
+- 강화 학습의 기초 이론
+    - 마르코프 결정 과정
+    - 마르코프 결정 과정의 수학 공식
+        - 마르코프 과정 시각화
+        - 에피소드 작업 대 연속적인 작업
+    - 강화 학습 용어: 대가, 정책, 가치 함수
+        - 대가
+        - 정책
+        - 가치 함수
+    - 벨먼 방정식을 사용한 동적 계획법
+- 강화 학습 알고리즘
+    - 동적 계획법
+        - 정책 평가 - 동적 계획법으로 가치 함수 예측하기
+        - 추정된 가치 함수로 정책 향상시키기
+        - 정책 반복
+        - 가치 반복
+    - 몬테 카를로를 사용한 강화 학습
+        - MC를 사용한 상태-가치 함수 추정
+        - MC를 사용한 행동-가치 함수 추정
+        - MC 제어를 사용해 최적의 정책 찾기
+        - 정책 향상 - 행동-가치 함수로부터 그리디 정책 계산하기
+    - 시간차 학습
+        - TD 예측
+        - 온-폴리시 TD 제어 (SARSA)
+        - 오프-폴리시 TD 제어 (Q-러닝)
+- 첫 번째 강화 학습 알고리즘 구현하기
+    - OpenAI 짐 툴킷 소개
+        - OpenAI 짐에 포함된 환경 사용하기
+        - 그리드 월드
+        - OpenAI 짐에서 그리드 월드 환경 구현하기
+    - Q-러닝으로 그리드 월드 문제 풀기
+        - Q-러닝 알고리즘 구현하기
+    - 심층 Q-러닝
+        - Q-러닝 알고리즘에 따라 DQN 모델 훈련하기
+            - 재생 메모리
+            - 손실 계산을 위해 타깃 가치 결정하기
+    - 심층 Q-러닝 알고리즘 구현
+- 전체 요약
 
-### A note on using the code examples
+### 코드 사용 방법 안내
 
-The recommended way to interact with the code examples in this book is via Jupyter Notebook (the `.ipynb` files). Using Jupyter Notebook, you will be able to execute the code step by step and have all the resulting outputs (including plots and images) all in one convenient document.
+이 책의 코드를 사용하는 가장 좋은 방법은 주피터 노트북(`.ipynb` 파일)입니다. 주피터 노트북을 사용하면 단계적으로 코드를 실행하고 하나의 문서에 편리하게 (그림과 이미지를 포함해) 모든 출력을 저장할 수 있습니다.
 
 ![](../ch02/images/jupyter-example-1.png)
 
-
-
-Setting up Jupyter Notebook is really easy: if you are using the Anaconda Python distribution, all you need to install jupyter notebook is to execute the following command in your terminal:
+주피터 노트북은 매우 간단하게 설치할 수 있습니다. 아나콘다 파이썬 배포판을 사용한다면 터미널에서 다음 명령을 실행하여 주피터 노트북을 설치할 수 있습니다:
 
     conda install jupyter notebook
 
-Then you can launch jupyter notebook by executing
+다음 명령으로 주피터 노트북을 실행합니다.
 
     jupyter notebook
 
-A window will open up in your browser, which you can then use to navigate to the target directory that contains the `.ipynb` file you wish to open.
+브라우저에서 윈도우가 열리면 원하는 `.ipynb`가 들어 있는 디렉토리로 이동할 수 있습니다.
 
-**More installation and setup instructions can be found in the [README.md file of Chapter 1](../ch01/README.md)**.
+**설치와 설정에 관한 더 자세한 내용은 1장의 [README.md 파일](../ch01/README.md)에 있습니다.**
 
-**(Even if you decide not to install Jupyter Notebook, note that you can also view the notebook files on GitHub by simply clicking on them: [`ch18.ipynb`](ch18.ipynb))**
+**(주피터 노트북을 설치하지 않았더라도 깃허브에서 [`ch18.ipynb`](https://github.com/rickiepark/python-machine-learning-book-3rd-edition/blob/master/ch18/ch18.ipynb)을 클릭해 노트북 파일을 볼 수 있습니다.)**.
 
-In addition to the code examples, I added a table of contents to each Jupyter notebook as well as section headers that are consistent with the content of the book. Also, I included the original images and figures in hope that these make it easier to navigate and work with the code interactively as you are reading the book.
+코드 예제 외에도 주피터 노트북에는 책의 내용에 맞는 섹션 제목을 함께 실었습니다. 또한 주피터 노트북에 원본 이미지와 그림을 포함시켰기 때문에 책을 읽으면서 코드를 쉽게 따라할 수 있으면 좋겠습니다.
 
 ![](../ch02/images/jupyter-example-2.png)
-
-
-When I was creating these notebooks, I was hoping to make your reading (and coding) experience as convenient as possible! However, if you don't wish to use Jupyter Notebooks, I also converted these notebooks to regular Python script files (`.py` files) that can be viewed and edited in any plaintext editor. 
