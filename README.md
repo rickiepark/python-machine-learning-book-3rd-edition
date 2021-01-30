@@ -13,7 +13,7 @@
 
 머신러닝 교과서 1판의 깃허브 저장소는 다음과 같습니다(1판이 원서의 2판에 해당합니다).
 
-- https://github.com/rickiepark/python-machine-learning-book-3rd-edition
+- https://github.com/rickiepark/python-machine-learning-book-2nd-edition
 
 ## 목차와 주피터 노트북
 
