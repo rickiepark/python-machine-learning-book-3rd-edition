@@ -5,7 +5,9 @@
 ![TensorFlow 2.4.0](https://img.shields.io/badge/TensorFlow-2.4.0-orange.svg?style=plastic)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg?style=plastic)
 
-2019년 5월 출간, 길벗 출판사
+![머신 러닝 교과서 3판](cover.png)
+
+2021년 3월 출간, 길벗 출판사
 
 이 책은 세바스찬 라시카(Sebastian Raschka)와 바히드 미자리리(Vahid Mirjalili)이 쓴 아마존 베스트 셀러 "[Python Machine Learning: Machine Learning and Deep Learning with Python, scikit-learn, and TensorFlow 2, 3rd Edition](https://www.amazon.com/Python-Machine-Learning-scikit-learn-TensorFlow/dp/1789955750/)"의 번역서입니다.
 
