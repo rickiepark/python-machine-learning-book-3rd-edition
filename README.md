@@ -1,8 +1,8 @@
 ## 머신러닝 교과서 3판
 
 ![Python 3.7](https://img.shields.io/badge/Python-3.7-blue.svg?style=plastic)
-![scikit-learn 0.23](https://img.shields.io/badge/scikit--learn-0.24.0-red.svg?style=plastic)
-![TensorFlow 2.4.0](https://img.shields.io/badge/TensorFlow-2.4.0-orange.svg?style=plastic)
+![scikit-learn 1.0](https://img.shields.io/badge/scikit--learn-1.0-red.svg?style=plastic)
+![TensorFlow 2.9.2](https://img.shields.io/badge/TensorFlow-2.9.2-orange.svg?style=plastic)
 ![License](https://img.shields.io/badge/Code%20License-MIT-blue.svg?style=plastic)
 
 ![머신 러닝 교과서 3판](cover.png)
